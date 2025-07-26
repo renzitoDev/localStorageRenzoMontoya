@@ -11,7 +11,7 @@
     <h1 class="text-center text-primary my-5">Listado de Productos</h1>
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-8">
+            <div class="col-12 col-md-8 mb-4">
                 <form>
                     <div class="mb-3">
                       <label class="form-label">Nombre de Producto</label>
@@ -26,49 +26,66 @@
                         <input type="url" class="form-control" id="imagenPro">
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Descripcion</label>
+                        <label class="form-label">Descripción</label>
                         <input type="text" class="form-control" id="descripcionPro">
                     </div>
-                    <button type="button" class="btn btn-primary btnGuardar">Guardar</button>
-                  </form>
+                    <div class="mb-3">
+                        <button type="button" class="btn btn-primary btnGuardar">Guardar Producto</button>
+                        <button type="button" class="btn btn-secondary btnCancelar" style="display: none;">Cancelar</button>
+                    </div>
+                </form>
             </div>
-            <!-- Agregar después del formulario existente -->
-<div class="crud-controls">
-    <h3>Gestión de Productos</h3>
-    
-    <!-- Buscador -->
-    <div class="search-container">
-        <input type="text" id="buscador" placeholder="Buscar productos...">
-        <button id="btnBuscar">🔍 Buscar</button>
-        <button id="btnMostrarTodos">📋 Mostrar Todos</button>
-    </div>
-    
-    <!-- Botón de exportar PDF -->
-    <div class="export-container">
-        <button id="btnExportarPDF">📄 Exportar a PDF</button>
-    </div>
-</div>
+            
+            <!-- Gestión de Productos -->
+            <div class="col-12 col-md-8 mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Gestión de Productos</h3>
+                    </div>
+                    <div class="card-body">
+                        <!-- Buscador -->
+                        <div class="row mb-3">
+                            <div class="col-12 col-md-8">
+                                <input type="text" id="buscador" class="form-control" placeholder="Buscar productos...">
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <button id="btnBuscar" class="btn btn-outline-primary me-2">🔍 Buscar</button>
+                                <button id="btnMostrarTodos" class="btn btn-outline-secondary">📋 Todos</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Botón de exportar PDF -->
+                        <div class="mb-3">
+                            <button id="btnExportarPDF" class="btn btn-success">📄 Exportar a PDF</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-            <div class="col-8">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Nombre</th>
-                            <th>Precio</th>
-                            <th>Descripcio</th>
-                            <th>Imagen</th>
-                            <th>Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>
+            <!-- Tabla de productos -->
+            <div class="col-12">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>#</th>
+                                <th>Nombre</th>
+                                <th>Precio</th>
+                                <th>Descripción</th>
+                                <th>Imagen</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
+    
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
     <script src="localStorage.js"></script>
-    <!-- Agregar antes de cerrar </body> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
 </body>
 </html>
